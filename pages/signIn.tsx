@@ -33,11 +33,6 @@ const SignInPage: NextPage = (props) => {
   }, [user]);
 
   const handleSignIn = async () => {
-    if (!user) {
-      setTextAlert("Please Register First");
-      setAlertPopup(true);
-      return;
-    }
     user.map((item: IUser, index: number) => {
       if (item.member_email === email && item.member_password === password) {
         setTextAlert("Welcome To My World");
