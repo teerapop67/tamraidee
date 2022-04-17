@@ -277,7 +277,7 @@ const Navbar: React.FC<PropsNav> = (props) => {
             </LinkItem>
           </Menu>
         </div>
-        {!member_email ? (
+        {member_email ? (
           <div className="WrapRight" style={{ gap: "20px" }}>
             <LinkItem
               href="/contact"
