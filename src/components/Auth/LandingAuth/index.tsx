@@ -67,10 +67,10 @@ const LandingAuth: React.FC<any> = (props) => {
                 <h1>Tam Rai Dee</h1>
               </span>
               <span>
-                <p>If you don't have an account</p>
+                <p>If you don&apos;t have an account</p>
                 <span>
                   you can
-                  <Link href="/register">
+                  <Link href="/register" passHref>
                     <RegisLink> Register here!</RegisLink>
                   </Link>
                 </span>

@@ -75,6 +75,7 @@ const Footer: React.FC<any> = () => {
             <Image
               src="/logo/logoTam.png"
               width="100%"
+              alt="logo"
               height="100%"
               objectFit="cover"
             />
@@ -85,21 +86,21 @@ const Footer: React.FC<any> = () => {
           </BoxWrapper>
           <div className="box-link">
             <ul className="link-col-1">
-              <Link href="/">
+              <Link href="/" passHref>
                 <li>About</li>
               </Link>
-              <Link href="/">
+              <Link href="/" passHref>
                 <li>Our ision</li>
               </Link>
-              <Link href="/">
+              <Link href="/" passHref>
                 <li>Our team</li>
               </Link>
             </ul>
             <ul className="link-col-2">
-              <Link href="/">
+              <Link href="/" passHref>
                 <li>Sponsors</li>
               </Link>
-              <Link href="/">
+              <Link href="/" passHref>
                 <li>Download</li>
               </Link>
             </ul>

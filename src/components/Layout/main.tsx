@@ -46,7 +46,7 @@ const Main: React.FC<any> = ({ children, router }) => {
       <div>{children}</div>
       <Footer />
       {scrollPosition > 400 && (
-        <Link href={router.asPath}>
+        <Link href={router.asPath} passHref>
           <ArrowScroll>
             <i className="fa-solid fa-arrow-up" style={{ color: "#fff" }}></i>
           </ArrowScroll>

@@ -176,7 +176,7 @@ export const LinkItem: React.FC<any> = ({
   const active = path === href;
   return (
     <>
-      <Link href={href}>
+      <Link href={href} passHref>
         {menu ? (
           <MenuItem
             active={active}
@@ -218,9 +218,14 @@ const Navbar: React.FC<PropsNav> = (props) => {
     <NavBox width="100%" mobile={mobile}>
       <NavContainer>
         <div className="WrapLeft">
-          <Link href="/">
+          <Link href="/" passHref>
             <LogoWrapper>
-              <ImgLogo src="/logo/logoTam.png" width="100%" height="78" />
+              <ImgLogo
+                src="/logo/logoTam.png"
+                width="100%"
+                height="78"
+                alt="logo"
+              />
             </LogoWrapper>
           </Link>
 
@@ -302,6 +307,7 @@ const Navbar: React.FC<PropsNav> = (props) => {
                 src="/img/profile/IMG_8877.png"
                 width="100%"
                 height="100%"
+                alt="profile"
                 style={{ borderRadius: "10px" }}
               />
             </div>
