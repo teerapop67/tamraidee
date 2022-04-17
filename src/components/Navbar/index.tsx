@@ -7,7 +7,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
 import { Divider } from "@mui/material";
 import { useCookies } from "react-cookie";
-import { useAppSelector } from "../../Redux/store";
+import { useAppDispatch, useAppSelector } from "../../Redux/store";
+import { isUserInfo } from "../../Redux/userReducer";
 
 const NavBox = styled(Box)<{ mobile: boolean }>`
   background: ${({ mobile }) => (mobile ? "#222" : "#fff")};
@@ -210,10 +211,26 @@ const Navbar: React.FC<PropsNav> = (props) => {
   const { path } = props;
   const matchesMobile = useMediaQuery("(min-width:840px)");
   const { member_email } = useAppSelector((state) => state.UserReducer);
+  const dispatch = useAppDispatch();
+
+  const reset = () => {
+    const payload = {
+      member_id: -1,
+      member_firstname: "",
+      member_lastname: "",
+      member_username: "",
+      member_password: "",
+      member_email: "",
+      member_date: "",
+      member_status: "",
+      member_profile: "",
+    };
+    dispatch(isUserInfo(payload));
+    console.log("Email: ", member_email);
+  };
 
   if (mobile && matchesMobile) setMobile(false);
 
-  console.log("Email: ", member_email);
   return (
     <NavBox width="100%" mobile={mobile}>
       <NavContainer>
@@ -302,7 +319,7 @@ const Navbar: React.FC<PropsNav> = (props) => {
               <p className="numberNotify">1</p>
               <i className="fa-solid fa-bell iconNotify"></i>
             </NotifyWrapper>
-            <div className="profile-wrapper">
+            <div className="profile-wrapper" onClick={reset}>
               <Image
                 src="/img/profile/IMG_8877.png"
                 width="100%"
